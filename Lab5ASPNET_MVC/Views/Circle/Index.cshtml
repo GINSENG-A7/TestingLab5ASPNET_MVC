@@ -1,0 +1,32 @@
+﻿@{
+    @using (Html.BeginForm("Calculate", "Circle", FormMethod.Post))
+    {
+        <div class="contaner">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <p>Ребро </p>
+                    <input type="text" name="radius" value="" />
+                </li>
+                <li class="nav-item">
+                    @if (ViewBag.Message != null)
+                    {
+                        <p>Фигура: </p><p id="name" name="name">@ViewBag.Message</p>
+                    }
+                    @if (ViewBag.Message == null)
+                    {
+                        <p>Фигура: </p><p id="name" name="name">@ViewBag.name</p>
+                    }
+                </li>
+                <li class="nav-item">
+                    <p>Площадь: </p><p id="surface" name="surface">@ViewBag.surface</p>
+                </li>
+                <li class="nav-item">
+                    <p>Периметр: </p><p id="perimeter" name="perimeter">@ViewBag.perimeter</p>
+                </li>
+                <li class="nav-item">
+                    <input class="btn btn-primary" @*name="calculate"*@ type="submit" value="Расчитать">
+                </li>
+            </ul>
+        </div>
+    }
+}
